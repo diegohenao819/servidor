@@ -2,11 +2,12 @@
   "name": "servidor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "devbabel": "nodemon app.js --exec babel-node"
+    "devbabel": "nodemon app.js --exec babel-node",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
