@@ -63,7 +63,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Puerto dinámico
 
-app.set('puerto', process.env.PORT || 3000); 
-app.listen(app.get('puerto'), function () { 
-    console.log('Example app listening on port'+ app.get('puerto')); 
+app.set('/', process.env.PORT || 3000); 
+app.listen(app.get('/'), function () { 
+    console.log('Example app listening on port'+ app.get('/')); 
 });
