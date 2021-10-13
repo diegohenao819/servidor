@@ -1,7 +1,6 @@
 {
   "name": "servidor",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "engines": {
     "node": "14.x"
@@ -18,20 +17,35 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect-history-api-fallback": "^1.6.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^6.0.10",
-    "morgan": "^1.10.0",
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.4",
-    "@babel/preset-env": "^7.15.8"
+    "@babel/preset-env": "^7.15.8",
+    "bcrypt": "^5.0.1",
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.10",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "^1.10.0",
+    "npm": "^8.0.0",
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegohenao819/servidor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegohenao819/servidor/issues"
+  },
+  "homepage": "https://github.com/diegohenao819/servidor#readme",
+  "description": ""
 }

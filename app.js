@@ -9,6 +9,7 @@ const app=express();
 
 const mongoose = require('mongoose'); 
 // const uri = 'mongodb://localhost:27017/DiegoDB';
+//"mongodb+srv://Nota-nueva:misiontic@cluster0.fxsz7.mongodb.net/DiegoDB?retryWrites=true&w=majority"//
 
 // const uri='mongodb+srv://user_notas:A27034286j@cluster0.8evgs.mongodb.net/notas?retryWrites=true&w=majority';
 
@@ -50,6 +51,8 @@ app.use(express.urlencoded({ extended: true }))
 //     res.send('Hola mundo');
 // });
 app.use('/api', require('./routes/nota'));
+app.use('/user', require('./routes/users'));
+app.use('/login', require('./routes/login'));
 
 
 
