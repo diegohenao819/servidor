@@ -29,7 +29,7 @@ router.post('/nuevo-usuario', async (req, res) => {
 
     const userDB = await User.create(body);
 
-    return res.json(userDB);
+    return res.json({userDB, mensaje:'Usuario creado exitosamente'});
     
   } catch (error) {
     return res.status(500).json({
