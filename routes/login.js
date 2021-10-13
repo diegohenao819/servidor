@@ -40,7 +40,8 @@ router.post('/', async(req, res) => {
     // Pasó las validaciones
       return res.json({
         usuarioDB,
-        token: token
+        token: token,
+        mensaje: "Bienvenido, se ha logueado exitosamente!"
     })
     
   } catch (error) {
