@@ -54,6 +54,7 @@ app.use('/api', require('./routes/nota'));
 app.use('/api/user', require('./routes/users'));
 app.use('/api/login', require('./routes/login'));
 app.use("/api", require("./routes/todos"));
+app.use("/api", require("./routes/vocabulary"));
 
 
 

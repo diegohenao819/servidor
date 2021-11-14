@@ -16,8 +16,8 @@ router.post("/vocabulary", (req, res) => {
 });
 
 // GET ALL
-router.get("/todos", (req, res) => {
-  todoSchema
+router.get("/vocabulary", (req, res) => {
+  vocabularySchema
 
     .find()
     .then((data) => res.json(data))
@@ -25,9 +25,9 @@ router.get("/todos", (req, res) => {
 });
 
 // GET ONE TO-DO
-router.get("/todos/:id", (req, res) => {
+router.get("/vocabulary/:id", (req, res) => {
   const { id } = req.params;
-  todoSchema
+  vocabularySchema
 
     .findById(id)
     .then((data) => res.json(data))
@@ -35,13 +35,13 @@ router.get("/todos/:id", (req, res) => {
 });
 
 // UPDATE
-router.put("/todos/:id", (req, res) => {
+router.put("/vocabulary/:id", (req, res) => {
   const { id } = req.params;
-  const { text } = req.body;
-  todoSchema
+  const { englishWord,definition } = req.body;
+  vocabularySchema
 
-    .updateOne({ _id: id }, { $set: { text } })
-    .then((data) => res.json(data)).then(res.send("se actualizó: " + text))
+    .updateOne({ _id: id }, { $set: { englishWord,definition } })
+    .then((data) => res.json(data)).then(res.send("se actualizó: " + englishWord))
     .catch((error) => res.json({ message: error }));
 });
 
