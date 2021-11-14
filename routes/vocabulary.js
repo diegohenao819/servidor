@@ -46,9 +46,9 @@ router.put("/vocabulary/:id", (req, res) => {
 });
 
 // ELIMINARwe
-router.delete("/todos/:id", (req, res) => {
+router.delete("/vocabulary/:id", (req, res) => {
   const { id } = req.params;
-  todoSchema
+  vocabularySchema
 
     .remove({ _id: id })
     .then((data) => res.json(data))
