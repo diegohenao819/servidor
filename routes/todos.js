@@ -37,11 +37,11 @@ router.get("/todos/:id", (req, res) => {
 // UPDATE
 router.put("/todos/:id", (req, res) => {
   const { id } = req.params;
-  const { todo } = req.body;
+  const { text } = req.body;
   todoSchema
 
-    .updateOne({ _id: id }, { $set: { todo } })
-    .then((data) => res.json(data))
+    .updateOne({ _id: id }, { $set: { text } })
+    .then((data) => res.json(data)).then(res.send("se actualizó: " + text))
     .catch((error) => res.json({ message: error }));
 });
 
