@@ -16,8 +16,8 @@ router.post("/vocabulary", (req, res) => {
 });
 
 // GET ALL
-router.get("/todos", (req, res) => {
-  todoSchema
+router.get("/vocabulary", (req, res) => {
+  vocabularySchema
 
     .find()
     .then((data) => res.json(data))
