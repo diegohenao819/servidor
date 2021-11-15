@@ -17,6 +17,7 @@ const userSchema = new Schema({
   date: { type: Date, default: Date.now },
   role: { type: String, default: 'USER', enum: roles },
   activo: { type: Boolean, default: true }
+  
 });
 
 // Validator

@@ -2,13 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-const todoSchema = require("../models/vocabulary");
-
+const todoSchema = require("../models/todo");
+const vocabularySchema = require("../models/vocabulary");
 import Todo from "../models/todo";
 
 // POST
 router.post("/vocabulary", (req, res) => {
-  const vocabulary = todoSchema(req.body);
+  const vocabulary = vocabularySchema(req.body);
   vocabulary
     .save()
     .then((data) => res.json(data))
@@ -16,8 +16,8 @@ router.post("/vocabulary", (req, res) => {
 });
 
 // GET ALL
-router.get("/vocabulary", (req, res) => {
-  vocabularySchema
+router.get("/todos", (req, res) => {
+  todoSchema
 
     .find()
     .then((data) => res.json(data))
@@ -25,9 +25,9 @@ router.get("/vocabulary", (req, res) => {
 });
 
 // GET ONE TO-DO
-router.get("/vocabulary/:id", (req, res) => {
+router.get("/todos/:id", (req, res) => {
   const { id } = req.params;
-  vocabularySchema
+  todoSchema
 
     .findById(id)
     .then((data) => res.json(data))
@@ -35,20 +35,20 @@ router.get("/vocabulary/:id", (req, res) => {
 });
 
 // UPDATE
-router.put("/vocabulary/:id", (req, res) => {
+router.put("/todos/:id", (req, res) => {
   const { id } = req.params;
-  const { englishWord,definition } = req.body;
-  vocabularySchema
+  const { text } = req.body;
+  todoSchema
 
-    .updateOne({ _id: id }, { $set: { englishWord,definition } })
-    .then((data) => res.json(data)).then(res.send("se actualizó: " + englishWord))
+    .updateOne({ _id: id }, { $set: { text } })
+    .then((data) => res.json(data)).then(res.send("se actualizó: " + text))
     .catch((error) => res.json({ message: error }));
 });
 
 // ELIMINARwe
-router.delete("/vocabulary/:id", (req, res) => {
+router.delete("/todos/:id", (req, res) => {
   const { id } = req.params;
-  vocabularySchema
+  todoSchema
 
     .remove({ _id: id })
     .then((data) => res.json(data))

@@ -1,16 +1,10 @@
-import  mongoose  from "mongoose";
-const Schema=mongoose.Schema;
+const mongoose = require("mongoose");
 
-
-const vocabularySchema=new Schema({
-
-    englishWord:{type:String, required:[true,'English word required']},
-    definition:String,
-    date:{type:Date, default: Date.now},
-    
-
+const vocabularySchema = mongoose.Schema({
+  
+  englishWord: { type: String },
+  definition: { type: String },
+  completed: { default: false },
 });
 
-//convertir a modelo
-const Nota=mongoose.model('Vocabulary',vocabularySchema);
-export default Nota;
+module.exports = mongoose.model("Vocabulary", vocabularySchema);
