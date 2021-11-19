@@ -9,8 +9,8 @@ const app=express();
 
 const mongoose = require('mongoose'); 
 // const uri = 'mongodb://localhost:27017/DiegoDB';
-//"mongodb+srv://Nota-nueva:misiontic@cluster0.fxsz7.mongodb.net/DiegoDB?retryWrites=true&w=majority"//
-
+//"mongodb+srv://Nota-nueva:misiontic@cluster0.fxsz7.mongodb.net/DiegoDB?retryWrites=true&w=majority"
+//'mongodb+srv://Andres:<password>@cpdb.jwf5f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 // const uri='mongodb+srv://user_notas:A27034286j@cluster0.8evgs.mongodb.net/notas?retryWrites=true&w=majority';
 
 
@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 // PROBANDO ALGO QUE VA A SALIR MAL
 
 const { MongoClient } = require('mongodb');
-const uri = 'mongodb+srv://Nota-nueva:misiontic@cluster0.fxsz7.mongodb.net/DiegoDB?retryWrites=true&w=majority';
+const uri = "mongodb+srv://Nota-nueva:misiontic@cluster0.fxsz7.mongodb.net/DiegoDB?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("DiegoDB").collection("notas");
@@ -55,6 +55,7 @@ app.use('/api/user', require('./routes/users'));
 app.use('/api/login', require('./routes/login'));
 app.use("/api", require("./routes/todos"));
 app.use("/api", require("./routes/vocabulary"));
+app.use("/api", require("./routes/test"));
 
 
 
