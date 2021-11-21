@@ -4,7 +4,7 @@ const testSchema = require("../models/test");
 
 // GET ALL
 router.get("/test", (req, res) => {
-  vocabularySchema
+  testSchema
 
     .find()
     .then((data) => res.json(data))
@@ -14,7 +14,7 @@ router.get("/test", (req, res) => {
 // GET ONE TO-DO
 router.get("/test/:id", (req, res) => {
   const { id } = req.params;
-  vocabularySchema
+  testSchema
 
     .findById(id)
     .then((data) => res.json(data))
