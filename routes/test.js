@@ -2,14 +2,25 @@ const express = require("express");
 const router = express.Router();
 const testSchema = require("../models/test");
 
-/* GET ALL
+// GET ALL
 router.get("/test", (req, res) => {
-    testSchema
-  
-      .find()
-      .then((data) => res.json(data))
-      .catch((error) => res.json({ message: error }));
-  });*/
+  vocabularySchema
+
+    .find()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
+// GET ONE TO-DO
+router.get("/test/:id", (req, res) => {
+  const { id } = req.params;
+  vocabularySchema
+
+    .findById(id)
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 
 // POST
 router.post("/test", (req, res) => {
