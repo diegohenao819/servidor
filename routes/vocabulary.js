@@ -15,14 +15,20 @@ router.post("/vocabulary", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+
+
 // GET ALL
 router.get("/vocabulary", (req, res) => {
   vocabularySchema
 
-    .find()
+    .find({"vocabularies":{"email":"diegohenao819@gmail.com"}})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
+
+
+
+
 
 // GET ONE TO-DO
 router.get("/vocabulary/:id", (req, res) => {
