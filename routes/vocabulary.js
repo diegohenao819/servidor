@@ -21,7 +21,7 @@ router.post("/vocabulary", (req, res) => {
 router.get("/vocabulary", (req, res) => {
   vocabularySchema
 
-    .find({"vocabularies":{"email":"diegohenao819@gmail.com"}})
+    .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
