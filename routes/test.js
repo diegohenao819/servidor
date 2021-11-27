@@ -37,8 +37,8 @@ router.put("/test", (req, res) => {
     const { level } = req.body;
     testSchema
   
-      .updateOne({ $set: { level } })
-      .then((data) => res.json(data)).then(res.send("Su nuevo nivel es " + level))
+      .updateOne({ email: email }, { $set: { level } })
+      .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
 
